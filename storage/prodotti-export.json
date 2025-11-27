@@ -1,0 +1,71 @@
+[ {
+  "id" : "0197d0ca-9d13-75d7-802f-44adb6bf69bb",
+  "stock" : null,
+  "nome" : "p1",
+  "categoria" : "c1",
+  "prezzo" : "120",
+  "descrizione" : "xxxxxxxxxxxx",
+  "img" : {
+    "storageName" : "fs",
+    "path" : "2025/07/03/1335c14d-3adb-2bd7-37bf-68bb4aa39eec.PNG",
+    "fileName" : "Cattura2.PNG",
+    "parameters" : { },
+    "contentType" : "image/png"
+  }
+}, {
+  "id" : "0197d0ca-ee8e-7efe-95d0-0b24c2593a66",
+  "stock" : null,
+  "nome" : "p2",
+  "categoria" : "c2",
+  "prezzo" : "300",
+  "descrizione" : "yyyyyyyyyyyyyyyyyyyyyy",
+  "img" : {
+    "storageName" : "fs",
+    "path" : "2025/07/03/dfb284ae-1c1d-2038-b6de-ecd58fdac355.PNG",
+    "fileName" : "Cattura.PNG",
+    "parameters" : { },
+    "contentType" : "image/png"
+  }
+}, {
+  "id" : "0197d0cb-1e7f-79ce-9885-897647a5d0a3",
+  "stock" : null,
+  "nome" : "p3",
+  "categoria" : "c3",
+  "prezzo" : "2000",
+  "descrizione" : "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+  "img" : {
+    "storageName" : "fs",
+    "path" : "2025/07/03/f1f6ca34-8e53-5e76-e3a8-6dd3c843c1bf.jpeg",
+    "fileName" : "x.jpeg",
+    "parameters" : { },
+    "contentType" : "image/jpeg"
+  }
+}, {
+  "id" : "0197d61c-52eb-7805-82ec-f7c4fb1efa0b",
+  "stock" : null,
+  "nome" : "p4",
+  "categoria" : "c4",
+  "prezzo" : "22500",
+  "descrizione" : "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+  "img" : {
+    "storageName" : "fs",
+    "path" : "2025/07/04/e460981a-911a-f64c-50a9-b610da28d307.pdf",
+    "fileName" : "Prerequisites+Instructions.pdf",
+    "parameters" : { },
+    "contentType" : "application/pdf"
+  }
+}, {
+  "id" : "0197d655-6910-7686-9d6b-86dc3e9a09d8",
+  "stock" : null,
+  "nome" : "a1",
+  "categoria" : "1",
+  "prezzo" : "1",
+  "descrizione" : "1",
+  "img" : {
+    "storageName" : "fs",
+    "path" : "2025/07/07/2cffa067-baff-d031-f0b5-420c23f6e56f.webp",
+    "fileName" : "download (3).webp",
+    "parameters" : { },
+    "contentType" : "application/octet-stream"
+  }
+} ]

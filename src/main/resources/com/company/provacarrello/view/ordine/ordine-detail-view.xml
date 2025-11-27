@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://ordineDetailView.title"
+      focusComponent="form">
+    <data>
+        <!-- Istanza dell'ordine -->
+        <instance id="ordineDc" class="com.company.provacarrello.entity.Ordine">
+            <fetchPlan extends="_base">
+                <property name="user" fetchPlan="_base"/>
+                <property name="righe" fetchPlan="_base">
+                    <property name="prodotto" fetchPlan="_base"/>
+                </property>
+            </fetchPlan>
+            <loader id="ordineDl"/>
+        </instance>
+
+        <!-- Collezione righe legate all'ordine -->
+        <collection id="righeDc" class="com.company.provacarrello.entity.OrdineRiga">
+            <loader id="righeDl">
+                <query>
+                    <![CDATA[
+                        select r from OrdineRiga r where r.ordine.id = :ordine
+                    ]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+
+    <actions>
+        <action id="saveAction" type="detail_saveClose"/>
+        <action id="closeAction" type="detail_close"/>
+    </actions>
+
+    <layout>
+        <vbox spacing="true" width="100%">
+            <formLayout id="form" dataContainer="ordineDc">
+                <responsiveSteps>
+                    <responsiveStep minWidth="0" columns="1"/>
+                    <responsiveStep minWidth="40em" columns="2"/>
+                </responsiveSteps>
+
+                <entityPicker id="userField" property="user">
+                    <actions>
+                        <action id="entityLookupAction" type="entity_lookup"/>
+                        <action id="entityClearAction" type="entity_clear"/>
+                    </actions>
+                </entityPicker>
+
+                <textField id="dataOrdineField" property="dataOrdine"/>
+                <textField id="totaleField" property="totale"/>
+            </formLayout>
+
+            <!-- Tabella prodotti dell'ordine -->
+            <dataGrid id="righeTable" dataContainer="righeDc" classNames="mt-l">
+                <columns>
+                    <column property="prodotto.nome" header="Prodotto"/>
+                    <column property="quantita" header="Quantità"/>
+                    <column property="prezzoUnitario" header="Prezzo Unitario"/>
+                </columns>
+            </dataGrid>
+
+            <hbox id="detailActions">
+                <button id="saveAndCloseButton" action="saveAction"/>
+                <button id="closeButton" action="closeAction"/>
+            </hbox>
+        </vbox>
+    </layout>
+</view>

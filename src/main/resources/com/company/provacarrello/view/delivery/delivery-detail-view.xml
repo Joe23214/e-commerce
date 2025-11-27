@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://deliveryDetailView.title"
+      focusComponent="form">
+    <data>
+        <instance id="deliveryDc"
+                  class="com.company.provacarrello.entity.Delivery">
+            <fetchPlan extends="_base"/>
+            <loader id="deliveryDl"/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <actions>
+        <action id="saveAction" type="detail_saveClose"/>
+        <action id="closeAction" type="detail_close"/>
+    </actions>
+    <layout>
+        <formLayout id="form" dataContainer="deliveryDc">
+            <responsiveSteps>
+                <responsiveStep minWidth="0" columns="1"/>
+                <responsiveStep minWidth="40em" columns="2"/>
+            </responsiveSteps>
+            <textField id="indirizzoField" property="indirizzo"/>
+            <textField id="cittaField" property="citta"/>
+            <textField id="nazioneField" property="nazione"/>
+            <textField id="capField" property="cap"/>
+            <textField id="informazioniDIContattoField" property="informazioniDIContatto"/>
+            <select id="deliveryTypeField" property="deliveryType"/>
+            <textField id="costoField" property="costo"/>
+        </formLayout>
+        <hbox id="detailActions">
+            <button id="saveAndCloseButton" action="saveAction"/>
+            <button id="closeButton" action="closeAction"/>
+        </hbox>
+    </layout>
+</view>

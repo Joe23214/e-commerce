@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="provaCarrello">
+        <createTable tableName="DELIVERY">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_DELIVERY"/>
+            </column>
+            <column name="INDIRIZZO" type="VARCHAR(255)"/>
+            <column name="CITTA" type="VARCHAR(255)"/>
+            <column name="NAZIONE" type="VARCHAR(255)"/>
+            <column name="CAP" type="VARCHAR(255)"/>
+            <column name="INFORMAZIONI_DI_CONTATTO" type="VARCHAR(255)"/>
+            <column name="DELIVERY_TYPE" type="VARCHAR(255)"/>
+            <column name="COSTO" type="DECIMAL(19, 2)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="provaCarrello">
+        <addColumn tableName="ORDINE">
+            <column name="DELIVERY_ID" type="UUID"/>
+        </addColumn>
+    </changeSet>
+    <changeSet id="3" author="provaCarrello">
+        <addForeignKeyConstraint baseColumnNames="DELIVERY_ID" baseTableName="ORDINE"
+                                 constraintName="FK_ORDINE_ON_DELIVERY" referencedColumnNames="ID"
+                                 referencedTableName="DELIVERY"/>
+    </changeSet>
+    <changeSet id="4" author="provaCarrello">
+        <dropColumn columnName="DELIVERY" tableName="ORDINE"/>
+    </changeSet>
+</databaseChangeLog>

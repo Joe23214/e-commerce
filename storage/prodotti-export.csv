@@ -1,0 +1,12 @@
+nome,categoria,prezzo,descrizione,stock
+p1,c1,120,xxxxxxxxxxxx,
+p2,c2,300,yyyyyyyyyyyyyyyyyyyyyy,
+p3,c3,2000,zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz,
+p4,c4,22500,zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz,
+a1,1,1,1,
+Prodotto B,Casa,49.90,Descrizione del prodotto B,30
+Prodotto C,Giardino,79.00,Descrizione del prodotto C,5
+Prodotto A,Elettronica,199.99,Descrizione del prodotto A,15
+Zaino Trekking 40L,Sport,45.00,Zaino leggero con supporto lombare e sacca idrica,10
+Tastiera Meccanica,Elettronica,89.99,Tastiera meccanica con retroilluminazione RGB,25
+Lampada da tavolo LED,Casa,19.99,Lampada regolabile con 3 livelli di intensità,50

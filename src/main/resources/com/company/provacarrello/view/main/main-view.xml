@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<mainView xmlns="http://jmix.io/schema/flowui/main-view"
+          title="msg://MainView.title">
+    <actions>
+        <action id="logoutAction" type="logout"/>
+    </actions>
+    <appLayout>
+        <navigationBar>
+            <header id="header" classNames="jmix-main-view-header"
+                    css="display: flex; align-items: center; justify-content: space-between; padding: 0 1rem; height: 3.5rem;">
+
+                <!-- Nome app a sinistra -->
+                <h1 id="applicationTitle" classNames="jmix-main-view-application-title"
+                    css="margin: 0; font-weight: 600;">
+                    <anchor id="baseLink"
+                            href="."
+                            text="msg://applicationTitle.text"
+                            classNames="jmix-main-view-application-title-base-link"
+                            css="text-decoration: none; color: inherit;"/>
+                </h1>
+
+                <!-- Menu orizzontale a destra -->
+                <horizontalMenu id="horizontalMenu"
+                                css="display: flex; align-items: center; gap: 1.5rem;"/>
+                <hbox  justifyContent="BETWEEN">
+                    <div id="rightControls">
+                        <icon  icon="vaadin:cart" id="carrelloIcona" css="cursor: pointer;"></icon>
+                    </div>
+
+                    <button id="logoutButton"
+                            action="logoutAction"
+                            classNames="jmix-logout-button"/>
+                </hbox>
+
+            </header>
+        </navigationBar>
+
+        <initialLayout>
+            <!-- Qui va il contenuto principale della pagina -->
+        </initialLayout>
+    </appLayout>
+</mainView>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view xmlns="http://jmix.io/schema/ui/view"
+      xmlns:c="http://vaadin.com/flow/component"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://jmix.io/schema/ui/view https://docs.jmix.io/schema/ui/view-2.5.xsd">
+
+    <layout>
+        <h2  css="margin-bottom:25px;margin-top:25px;" alignSelf="CENTER" text="msg://I Nostri Prodotti" ></h2>
+        <c:div id="productContainer"/>
+    </layout>
+
+</view>

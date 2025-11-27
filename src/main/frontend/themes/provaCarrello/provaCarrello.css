@@ -1,0 +1,498 @@
+/* Contenitore principale delle card */
+.product-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  background-color: #f5f5f5;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+/* Singola card prodotto */
+.product-card {
+  flex: 0 0 calc(33.333% - 12px);
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.product-card img.product-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.product-name {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.product-price {
+  color: green;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.product-description {
+  font-size: 13px;
+  color: #555;
+  margin-top: 8px;
+  flex-grow: 1;
+}
+
+.product-card button {
+  margin-top: 12px;
+}
+
+/* Carrello - versione 1 */
+.cart-item-card {
+  display: flex;
+  gap: 16px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.cart-item-category {
+  color: #d32f2f;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.cart-item-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  flex-shrink: 0;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.cart-item-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.cart-item-name {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.cart-item-description {
+  font-size: 14px;
+  color: #666;
+  flex-shrink: 1;
+}
+
+.cart-item-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+  width: 100%;
+}
+
+.cart-item-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.cart-item-actions button {
+  background-color: #ef5350;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.cart-item-actions button:hover {
+  background-color: #c62828;
+}
+
+/* Totale carrello */
+.cart-total {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 2rem;
+  text-align: right;
+  padding-right: 12px;
+  color: #333;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
+
+/* Checkout container */
+.checkoutContainer {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.checkoutContainer .vaadin-radio-button {
+  margin-bottom: 0.5rem;
+}
+
+/* Animazione carrello */
+.cart-grow {
+  animation: growCart 0.4s ease-in-out;
+}
+
+@keyframes growCart {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+/* --- Versione 2: Card compatte carrello --- */
+.cart-item-card-v2 {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  gap: 15px;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease;
+  cursor: default;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cart-item-card-v2:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.cart-item-image-v2 {
+  border-radius: 6px;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid #ddd;
+}
+
+.cart-item-info-layout-v2 {
+  flex: 1 1 auto;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.cart-item-qty-layout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-item-qty-layout > span {
+  font-weight: 700;
+  min-width: 20px;
+  text-align: center;
+}
+
+.cart-item-button {
+  min-width: 32px;
+  height: 32px;
+  font-weight: bold;
+}
+
+.cart-item-remove-button {
+  color: #d9534f;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.cart-item-remove-button:hover {
+  color: #a94442;
+}
+
+/* Totale carrello a sinistra */
+.cart-total {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 2rem;
+  text-align: left;
+  padding-left: 12px;
+  color: #333;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
+
+/* Bottone svuota carrello */
+.clear-cart-btn {
+  background-color: #ef5350;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.clear-cart-btn:hover {
+  background-color: #c62828;
+}
+
+/* Pulsanti avanti/indietro (freccette) */
+.wizard-nav-btn {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 8px; /* sposta leggermente a sinistra */
+}
+
+.wizard-nav-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.wizard-nav-btn:disabled,
+.wizard-nav-btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Pulsante di conferma ordine */
+.checkout-confirm-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.checkout-confirm-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Layout header pulsanti/step */
+.checkout-content > vaadin-vertical-layout > vaadin-horizontal-layout {
+  /* Personalizza qui se necessario */
+}
+
+/* Spazio tra pulsanti */
+.checkout-content > vaadin-vertical-layout > vaadin-horizontal-layout > vaadin-horizontal-layout:last-child {
+  gap: 10px;
+}
+/*steppers*/
+.step-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.step-item {
+    cursor: pointer;
+    user-select: none;
+}
+
+.step-icon {
+    width: 28px;
+    height: 28px;
+    color: #20c997;
+    border: 2px solid #20c997;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #d2f4eb, #a0e4d4);
+    box-shadow: 2px 2px 5px rgba(32, 201, 151, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding:2px;
+}
+
+.active-step .step-icon {
+    color: #138d75;
+    border-color: #138d75;
+    background: linear-gradient(145deg, #a0e4d4, #70cbbb);
+    box-shadow: 2px 2px 6px rgba(19, 141, 117, 0.7);
+}
+
+.step-label {
+    font-weight: normal;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+.active-step .step-label {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #138d75;
+}
+
+.torna-prodotti-btn {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.torna-prodotti-btn:hover {
+    background-color: #e0e0e0;
+}
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+/*dashboardAdmin*/
+/* Dashboard Header */
+.dashboard-header {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 0;
+    color: #2c3e50;
+}
+
+/* KPI Card */
+/*
+.kpi-card {
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 200px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.kpi-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.kpi-card .title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+.kpi-card .value {
+    font-size: 26px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 10px 0;
+}
+
+.kpi-card .diff {
+    font-size: 14px;
+}
+*/
+.kpi-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.kpi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+.kpi-card-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.kpi-card-value {
+  font-weight: 700;
+  font-size: 28px;
+  color: #111;
+}
+
+.kpi-card-diff {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.kpi-positive {
+  color: #27ae60; /* verde */
+}
+
+.kpi-negative {
+  color: #e74c3c; /* rosso */
+}
+
+/* Grafico */
+.sales-chart-wrapper {
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Bottoni periodo */
+.period-buttons vaadin-button {
+    font-weight: bold;
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.period-buttons vaadin-button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Tabelle ordini */
+.orders-section h3 {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}

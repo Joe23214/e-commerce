@@ -1,0 +1,17 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:h="http://jmix.io/schema/flowui/component/layout/hbox"
+      xmlns:v="http://jmix.io/schema/flowui/component/layout/vbox"
+      xmlns:l="http://jmix.io/schema/flowui/component/layout"
+      title="msg://checkoutView.title">
+
+    <layout>
+        <h2 alignSelf="CENTER" text="msg://Il Tuo Carrello" ></h2>
+        <h:hbox id="container" width="100%" height="100vh" spacing="true" padding="true">
+            <!-- Sidebar: cart items container -->
+            <v:vbox id="sidebar" class="checkout-left-pane" css="margin-top:60px;" flex-grow="1" height="100%" padding="true" spacing="true"/>
+
+            <!-- Content: wizard container -->
+            <v:vbox id="content" class="checkout-right-pane" flex-grow="2" height="100%" padding="true" spacing="true"/>
+        </h:hbox>
+    </layout>
+</view>

@@ -1,0 +1,46 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="Importa file"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://jmix.io/schema/flowui/view http://jmix.io/schema/flowui/view.xsd">
+
+    <layout spacing="true" padding="true">
+        <vbox width="100%" justifyContent="BETWEEN" spacing="true">
+            <hbox spacing="true" width="100%">
+                <select id="importTypeSelect"
+                        helperText="Tipo Importazione"
+                        width="200px"/>
+                <upload id="csvUpload"
+                        autoUpload="false"
+                        receiverType="MemoryBuffer"
+                        maxFiles="1"
+                        dropLabel="Trascina o seleziona file CSV"/>
+                <upload id="jsonUpload"
+                        autoUpload="false"
+                        receiverType="MemoryBuffer"
+                        maxFiles="1"
+                        dropLabel="Trascina o seleziona file JSON"/>
+                <upload id="xmlUpload"
+                        autoUpload="false"
+                        receiverType="MemoryBuffer"
+                        maxFiles="1"
+                        dropLabel="Trascina o seleziona file XML"/>
+            </hbox>
+
+            <textArea id="previewArea" width="100%" height="20em"/>
+
+            <dataGrid id="prodottiGrid"
+                      dataContainer="prodottiDc"
+                      width="100%" height="300px"/>
+            <dataGrid id="ordiniGrid"
+                      dataContainer="ordiniDc"
+                      width="100%" height="300px"/>
+
+            <button id="importButton" text="Importa"/>
+        </vbox>
+    </layout>
+
+    <data>
+        <collection id="prodottiDc" class="com.company.provacarrello.entity.Prodotto"/>
+        <collection id="ordiniDc" class="com.company.provacarrello.entity.Ordine"/>
+    </data>
+</view>

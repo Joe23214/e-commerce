@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:c="http://jmix.io/schema/flowui/jpql-condition"
+      title="msg://deliveryListView.title"
+      focusComponent="deliveriesDataGrid">
+    <data>
+        <collection id="deliveriesDc"
+                    class="com.company.provacarrello.entity.Delivery">
+            <fetchPlan extends="_base"/>
+            <loader id="deliveriesDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from Delivery e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <urlQueryParameters>
+            <genericFilter component="genericFilter"/>
+            <pagination component="pagination"/>
+        </urlQueryParameters>
+    </facets>
+    <actions>
+        <action id="selectAction" type="lookup_select"/>
+        <action id="discardAction" type="lookup_discard"/>
+    </actions>
+    <layout>
+        <genericFilter id="genericFilter"
+                       dataLoader="deliveriesDl">
+            <properties include=".*"/>
+        </genericFilter>
+        <hbox id="buttonsPanel" classNames="buttons-panel">
+            <button id="createButton" action="deliveriesDataGrid.createAction"/>
+            <button id="editButton" action="deliveriesDataGrid.editAction"/>
+            <button id="removeButton" action="deliveriesDataGrid.removeAction"/>
+            <simplePagination id="pagination" dataLoader="deliveriesDl"/>
+        </hbox>
+        <dataGrid id="deliveriesDataGrid"
+                  width="100%"
+                  minHeight="20em"
+                  dataContainer="deliveriesDc"
+                  columnReorderingAllowed="true">
+            <actions>
+                <action id="createAction" type="list_create"/>
+                <action id="editAction" type="list_edit"/>
+                <action id="removeAction" type="list_remove"/>
+            </actions>
+            <columns resizable="true">
+                <column property="indirizzo"/>
+                <column property="citta"/>
+                <column property="nazione"/>
+                <column property="cap"/>
+                <column property="informazioniDIContatto"/>
+                <column property="deliveryType"/>
+                <column property="costo"/>
+            </columns>
+        </dataGrid>
+        <hbox id="lookupActions" visible="false">
+            <button id="selectButton" action="selectAction"/>
+            <button id="discardButton" action="discardAction"/>
+        </hbox>
+    </layout>
+</view>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://jmix.io/schema/flowui/menu">
+
+    <menu id="application" title="msg://com.company.provacarrello/menu.application.title" opened="true">
+        <item view="ListaProdotti" title="msg://com.company.provacarrello.view.listaprodotti/listaProdotti.title"/>
+        <item view="CheckoutView" title="msg://com.company.provacarrello.view.checkout/checkoutView.title"/>
+       <separator></separator>
+        <menu id="menu2" title="msg://Admin Dashboard">
+            <item view="User.list" title="msg://com.company.provacarrello.view.user/UserListView.title"/>
+            <item view="Parodotto.list" title="msg://com.company.provacarrello/Prodotti"/>
+            <item view="Ordine.list" title="msg://com.company.provacarrello/Ordini"/>
+            <item view="Delivery.list" title="msg://com.company.provacarrello.view.delivery/deliveryListView.title"/>
+            <item view="Dashboardadmin" title="msg://com.company.provacarrello.view.dashboardadmin/dashboardadmin.title"/>
+            <item view="ImportFileView" title="msg://com.company.provacarrello.view.importfile/importFile.title"/>
+        </menu>
+
+
+
+    </menu>
+
+</menu-config>

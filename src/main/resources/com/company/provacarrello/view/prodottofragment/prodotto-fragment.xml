@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fragment xmlns="http://jmix.io/schema/flowui/fragment"
+          xmlns:c="http://jmix.io/schema/flowui/component"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://jmix.io/schema/flowui/fragment
+                              https://cdn.jmix.io/schema/flowui/fragment.xsd">
+    <content/>
+</fragment>

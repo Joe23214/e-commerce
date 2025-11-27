@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+
+    <!-- Rimuovi prima le righe dalla tabella ORDINE_RIGA -->
+    <changeSet id="1" author="admin">
+        <sql>DELETE FROM ORDINE_RIGA WHERE ORDINE_ID IS NOT NULL;</sql>
+    </changeSet>
+
+    <!-- Ora puoi svuotare la tabella ORDINE -->
+    <changeSet id="2" author="admin">
+        <sql>TRUNCATE TABLE ORDINE;</sql>
+    </changeSet>
+
+</databaseChangeLog>
